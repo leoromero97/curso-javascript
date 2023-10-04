@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" cont nt="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-slate-900 text-gray-200 flex flex-col w-full">
+  <header class="w-full px-4 py-6">
+    <span class="font-semibold">Curso de JavaScript - Clase 01 - Variables</span>
+  </header>
+  <main class="flex flex-col w-full justify-center px-10 gap-6 py-10">
+    <h1 class="text-3xl font-bold">
+      Tema 1: Variables
+    </h1>
+    <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 max-w-sm"
+      role="alert">
+      <span class="font-medium">⚠️</span> Abrí la consola para ver cada clase o para practicar.
+      <span class="font-medium">Podés presionar F12</span>
+    </div>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 01</h3>
+      <span class="font-semibold">
+        Fundamentos de Variables y ejemplos con la variable de tipo <code
+          class="bg-gray-800 rounded-md px-2 py-1 text-red-500">var</code>:
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Es una característica de los lenguajes de programación, en ellas se pueden guardar valores e información.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Su esqueleto es [tipo de variable] [nombre de la variable] = [valor de la variable];
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Existen 3 (tres) formas de declarar una variable, con las palabras reservadas de JavaScript:
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">var</code>,
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">let</code> y
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">const</code>
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Actualmente solo se utilzan
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">let</code> y
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">const</code>
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Se asigna el valor con el símbolo igual
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">=</code>
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Se puede reasignar el valor inicial.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Se puede inicializar sin un valor.
+        </li>
+        <li class="w-full px-4 py-2 rounded-b-lg">
+          - Si el valor es un string, se pueden utilizar comillas simples, dobles o inversas, es importante que se abran
+          y
+          cierren con el mismo tipo de comillas.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Inicializar una variable con un valor de tipo string:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          var direccion = "Juncal 2323, CABA";
+          <br>
+          console.log(direccion);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Reasignar el valor de la variable
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          var direccion = "Juncal 2323, CABA";
+          <br>
+          direccion = 'Castañon 2324, CABA';
+          <br>
+          console.log(direccion);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Al ser un lenguaje de programación dinámico, no hace falta especificar el tipo de dato:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          direccion = 2325;
+          <br>
+          console.log(direccion);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Inicializar variable sin valor inicial:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          var entregado;
+          <br>
+          entregado = true;
+          <br>
+          console.log(entregado);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Al reasignar otro valor, se está cambiando el valor:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          var entregado;
+          <br>
+          entregado = true;
+          <br>
+          entregado = false;
+          <br>
+          console.log(entregado);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Inicializar más de una variable con el mismo tipo:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+           var conductor = 'Juan', direccion = 'Mariano Acosta 1234', precio = 1000;
+          <br>
+          console.log(conductor, direccion, precio);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Las variables no se pueden inicializar con números, el ejemplo no mostraria nada en la consola:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+           var 1Direccion;
+          <br>
+          console.log(1Direccion);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Las variables si pueden tener número en su nombre:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          var direccion1;
+          <br>
+          console.log(direccion1);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-semibold">
+          // Formas y estilos de nombrar una variable con mas de una palabra:
+        </span>
+        <span class="text-sm font-medium">
+          // Camel case (Recomendada y más utilizada):
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          var direccionSalida;
+        </code>
+        <span class="text-sm font-medium">
+          // Snacke case o underscord:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          var direccion_salida;
+        </code>
+        <span class="text-sm font-medium">
+          // Pascal case (Normalmente utilizado en clases):
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          var DireccionSalida;
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 02</h3>
+      <span class="font-semibold">
+        Diferencia con
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">var</code>
+        y ejemplos con la variable de tipo
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">let</code>:
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Si se declara una variable con el mismo nombre en diferentes archivos del proyecto, van a ocurrir errores de
+          ejecución.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - No se podría utilizar la variable direccion en este archivo, se podría comentar el archivo 01-class.js o
+          usar otros nombres para los ejemlos.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Aplican los mismas características
+        </li>
+        <li class="w-full px-4 py-2 rounded-b-lg">
+          - La diferencia es que, let te permite declarar variables limitando su alcance (scope) al bloque, declaración,
+          o expresión donde se está usando, a diferencia de la palabra reservada var la cual define una variable global
+          o local en una función sin importar el ámbito del bloque.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Inicializar una variable con un valor de tipo string:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          let nombreCliente = 'Popus';
+          <br>
+          console.log(nombreCliente);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Reasignar una variable con un valor de tipo number:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          let nombreCliente = 'Popus';
+          <br>
+          nombreCliente = 1;
+          <br>
+          console.log(nombreCliente);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Reasignar una variable con un valor de tipo null:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          let nombreCliente = 'Popus';
+          <br>
+          nombreCliente = null;
+          <br>
+          console.log(nombreCliente);
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 03</h3>
+      <span class="font-semibold">
+        Diferencia con
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">var</code>
+        y
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">let</code>
+        respecto con la variable de tipo
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">const</code>:
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Aplican todas las mismas reglas pero se diferencian en 2 puntos.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Una variable declarada con const no se puede reasignar por otro valor
+        </li>
+        <li class="w-full px-4 py-2 rounded-b-lg">
+          - Se debe declarar con un valor si o si.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Creando una variable y reasignando el valor:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const nombreRepartidor = 'Carlos';
+          <br>
+          console.log(nombreRepartidor);
+          <br>  
+          nombreRepartidor = 'Juan'; Esto devuelve un error
+          <br>
+          console.log(nombreRepartidor);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Inicializando una variable sin ningún valor:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const marcaMoto; Esto marca un error
+          <br>
+          marcaMoto = 'Honda';
+          <br>
+          console.log(marcaMoto);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Forma correcta:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const nombreRepartidor = 'Leonardo';
+          <br>
+          console.log(nombreRepartidor);
+        </code>
+      </div>
+    </section>
+  </main>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+<!-- <script src="./js/01-class.js"></script> -->
+<!-- <script src="./js/02-class.js"></script> -->
+<script src="./js/03-class.js"></script>
+
+</html>
