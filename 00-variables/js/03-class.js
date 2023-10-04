@@ -1,0 +1,1 @@
+/* Existen 3 (tres) formas de declarar una variable */
