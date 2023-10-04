@@ -236,11 +236,70 @@
         </code>
       </div>
     </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 03</h3>
+      <span class="font-semibold">
+        Diferencia con
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">var</code>
+        y
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">let</code>
+        respecto con la variable de tipo
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">const</code>:
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Aplican todas las mismas reglas pero se diferencian en 2 puntos.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Una variable declarada con const no se puede reasignar por otro valor
+        </li>
+        <li class="w-full px-4 py-2 rounded-b-lg">
+          - Se debe declarar con un valor si o si.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Creando una variable y reasignando el valor:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const nombreRepartidor = 'Carlos';
+          <br>
+          console.log(nombreRepartidor);
+          <br>  
+          nombreRepartidor = 'Juan'; Esto devuelve un error
+          <br>
+          console.log(nombreRepartidor);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Inicializando una variable sin ningún valor:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const marcaMoto; Esto marca un error
+          <br>
+          marcaMoto = 'Honda';
+          <br>
+          console.log(marcaMoto);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Forma correcta:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const nombreRepartidor = 'Leonardo';
+          <br>
+          console.log(nombreRepartidor);
+        </code>
+      </div>
+    </section>
   </main>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
 <!-- <script src="./js/01-class.js"></script> -->
-<script src="./js/02-class.js"></script>
+<!-- <script src="./js/02-class.js"></script> -->
 <script src="./js/03-class.js"></script>
 
 </html>
