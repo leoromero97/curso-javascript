@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <title>JavaScript | 01 Strings</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" cont nt="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-slate-900 text-gray-200 flex flex-col w-full">
+  <header class="w-full px-4 py-6">
+    <span class="font-semibold">Curso de JavaScript - Clase 02 - Strings</span>
+  </header>
+  <main class="flex flex-col w-full justify-center px-10 gap-6 py-10">
+    <h1 class="text-3xl font-bold">
+      Tema 2: Strings
+    </h1>
+    <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 max-w-sm"
+      role="alert">
+      <span class="font-medium">⚠️</span> Abrí la consola para ver cada clase o para practicar.
+      <span class="font-medium">Podés presionar F12</span>
+    </div>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 04</h3>
+      <span class="font-semibold">
+        Fundamentos de Strings o cadenas de texto
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Es un texto, y este tiene que estar encerrado entre comillas.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Se pueden utilizar comillas simples, dobles o inversas, es importante que se abran
+          y cierren con el mismo tipo de comillas. <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">''</code>, <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">""</code> o <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">``</code>
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Pueden contener cualquier cosa, la intefaz siempre va a mostrar una cadena de texto siempre y cuando este dentro de las comillas.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Se pueden concatenar/encadenar.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Tienen métodos nativos de JavaScript.
+        </li>
+        <li class="w-full px-4 py-2 rounded-b-lg">
+          - Si el valor es un string, se pueden utilizar comillas simples, dobles o inversas, 
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Inicializar variables con un valores de tipo string:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const producto1 = "Mochila";
+          <br>
+          console.log(producto1);
+        </code>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const producto2 = 'Valija';
+          <br>
+          console.log(producto2);
+        </code>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const producto3 = `Candado`;
+          <br>
+          console.log(producto3);
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 05</h3>
+      <span class="font-semibold">
+        String Methods - Includes y length
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Los métodos son funciones nativas que probee JavaScript y hay diferentes para cada tipo de dato.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - También existen propiedades como .length
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Devuelven diferentes valores.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // I// Conocer la cantidad de letras de la cadena de texto:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const product1 = 'Monitor 20 pulgadas'
+          <br>
+          console.log(product1)
+          console.log('Cantidad de letras en la cadena de texto', product1.length)
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Conocer la posición de la letra donde empieza la palabra que buscamos. Si no se encuentra devuelve -1
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const product1 = 'Monitor 20 pulgadas'
+          <br>
+          console.log(product1.indexOf('Monitor'))
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Devuelve un valor de tipo boolean para saber si incluye el string que le pasemos en el método
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log('Incluye tablet?', product1.includes('Tablet'))
+          <br>
+          console.log('Incluye Monitor?', product1.includes('Monitor'))
+          <br>
+          console.log('Incluye monitor?', product1.includes('monitor'))
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 06</h3>
+      <span class="font-semibold">
+        Concatenar o unir strings
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Se puede utilizar el método concat().
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Se puede utilizar el signo + o , y espacios.
+        </li>
+        <li class="w-full px-4 py-2 rounded-b-lg">
+          - Se puede utilizar template strings, con comillas invertidas, signo de $ y llaves {}.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Concatenar con método concat()
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const product = 'Moto'
+          const brand = 'Honda'
+          <br>
+          console.log(product.concat(' ', brand))
+          <br>  
+          console.log(product.concat(' en descuento'))
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Concatenar con + y espacios
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log("La marca del producto: " + product + ", es " + brand)
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Concatenar con , y espacios
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log("El producto a vender es: " , product)
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Concatenar con template strings, se debe usar comilla invertida o bactick y signo de pesos ($) y encerrar entre llaves {} la variable
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log(`El producto es ${product} y su marca es ${brand}`)
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 07</h3>
+      <span class="font-semibold">
+        Cortar espacios en blanco de un string
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Se puede utilizar el método trimStart() para cortar los espacios al inicio del string.
+        </li>
+        <li class="w-full px-4 py-2 rounded-b-lg">
+          - Se puede utilizar el método trimEnd() para cortar los espacios al final del string.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Se puede utilizar el método trim() o de forma concatenada los métodos trimStart() y trimEnd() para cortar los espacios al inicio y al final del string.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Agregar espacios en blanco al principio y al final, JavaScript cuenta esos espacios como un carácter.
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const product4WithSpaces = "              Botella de agua         ";
+          <br>
+          console.log(product4WithSpaces.length);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Eliminar espacios en blanco del inicio del string
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log(product4WithSpaces.trimStart());
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Eliminar espacios en blanco al final del string
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log(product4WithSpaces.trimEnd());
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Eliminar espacios en blanco al inicio y al final del string de forma concatenada
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log(product4WithSpaces.trimStart().trimEnd());
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Eliminar espacios en blanco al inicio y al final del string con 1 solo método
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log(product4WithSpaces.trim());
+          <br>
+          console.log(product4WithSpaces.trim().length);
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 08</h3>
+      <span class="font-semibold">
+        Reemplazar o modificar valores del string
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Se puede utilizar el método replace() para reemplazar un valor por otro.
+        </li>
+        <li class="w-full px-4 py-2 rounded-b-lg">
+          - Se puede utilizar el método slice() o substring() para cortar y extraer un valor del string en base a posiciones del index de ese string.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Se puede utilizar el método chartAt() para obtener un valor del string en base a la posición que se pase.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Reemplazar un string por otro con método replace()
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const product5 = 'Monitor de 20 pulgadas'
+          <br>
+          console.log(product5)
+          <br>
+          console.log(product5.replace('pulgadas', '"'))
+          <br>
+          console.log(product5.replace('Monitor', 'Monitor Curvo'))
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Método slice() para extraer o cortar una parte del string, hay que pasar el index del string donde quieres que inicie y donde quieres que corte
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log('Arranca en la posición 0, y desde la 10 en adelante lo corta al string: ', product5.slice(0, 10))
+          <br>
+          console.log('A partir de la posición 8 en adelante muestra el contenido del string: ', product5.slice(8))
+          <br>
+          console.log('Si la posición de inicio es más grande que la del index a cortar, no se ejecuta el método.', product5.slice(2, 1))
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Alternativa a método slice() con substring()
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log('Arranca en la posición 0, y desde la 10 en adelante lo corta al string: ', product5.substring(0, 10))
+          <br>
+          console.log('Si la posición de inicio es más grande que la del index a cortar, se invierten las posiciones: ', product5.substring(2, 1))
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Cortar la primera letra de un string
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const userName = 'Leo'
+          <br>
+          console.log(userName.substring(0,1))
+          <br>
+          console.log(userName.charAt(0))
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Eliminar espacios en blanco al inicio y al final del string con 1 solo método
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log(product4WithSpaces.trim());
+          <br>
+          console.log(product4WithSpaces.trim().length);
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 09</h3>
+      <span class="font-semibold">
+        Repetir valores de un string y dividir un string
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Con el método repeat() se puede repetir un string la cantidad de veces que se indique.
+        </li>
+        <li class="w-full px-4 py-2 rounded-b-lg">
+          - Con el método split() puedo obtener un array a partir del string.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Puedo obtener un array por cada caracter del string o por cada palabra que este por fuera del valor que indique.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // repeat() permite repetir una cadena de texto
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const product6 = "Celular Xiaomi ";
+          <br>
+          const text = "en promoción ".repeat(3);
+          <br>
+          console.log(`${product6} ${text}!!!`);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Si pasas un número que no es entero, se redondea al número entero, no tiene en cuenta si el decimal es mayor o menor a 5.
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const text2 = "en promoción ".repeat(2.7);
+          <br>
+          console.log(`${product6} ${text2}!!`);
+          <br>
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // El método split() devuelve un array con cada caracter del valor del string.
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const activity = "Estoy aprendiendo JavaScript moderno";
+          <br>
+          console.log(activity.split(""));
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Devuelve un array con cada palabra del valor del string que este separado por un espacio.
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log(activity.split(" "));
+          <br>
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Devuelve un array con cada palabra del valor del string que este separado por el valor que le indique.
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const hobbies = "Leer, caminar, escuchar música, escribir, programar";
+          <br>
+          console.log(hobbies.split(", "));
+          <br>
+          const hashtag = "Aprendiendo JavaScript #JSModerno";
+          <br>
+          console.log(hashtag.split("#"));
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 10</h3>
+      <span class="font-semibold">
+        Convertir a mayúsculas o minúsculas
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Con el método toUpperCase() se puede transformar todo el valor del string a mayúscula.
+        </li>
+        <li class="w-full px-4 py-2 rounded-b-lg">
+          - Con el método toLowerCase() se puede transformar todo el valor del string a minúscula.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Con el método toString() se puede convertir un valor de tipo number a tipo string.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Pasar a mayúscula todo el valor del string
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const address = 'Castañon'
+          <br>
+          console.log(address.toUpperCase())
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Pasar a minúsculas todo el valor del string
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const email = 'Leonardogerbacio@gmail.com'
+          <br>
+          console.log(email.toLowerCase())
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Convertir un valor de tipo númerico a tipo string
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const price1 = 3000
+          <br>
+          console.log(price1)
+          <br>
+          console.log(price1.toString())
+        </code>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+  <script src="./js/01-app-strings.js"></script>
+  <script src="./js/02-app-strings.js"></script>
+  <script src="./js/03-app-strings.js"></script>
+  <script src="./js/04-app-strings.js"></script>
+  <script src="./js/05-app-strings.js"></script>
+  <script src="./js/06-app-strings.js"></script>
+  <script src="./js/07-app-strings.js"></script>
+</body>
+
+</html>
