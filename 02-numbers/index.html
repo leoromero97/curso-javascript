@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <title>JavaScript | 02 Numbers</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" cont nt="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-slate-900 text-gray-200 flex flex-col w-full">
+  <header class="w-full px-4 py-6">
+    <span class="font-semibold">Curso de JavaScript - Clase 02 - Numbers</span>
+  </header>
+  <main class="flex flex-col w-full justify-center px-10 gap-6 py-10">
+    <h1 class="text-3xl font-bold">
+      Tema 3: Numbers
+    </h1>
+    <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 max-w-sm"
+      role="alert">
+      <span class="font-medium">⚠️</span> Abrí la consola para ver cada clase o para practicar.
+      <span class="font-medium">Podés presionar F12</span>
+    </div>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 11</h3>
+      <span class="font-semibold">
+        Fundamentos de tipo de dato Numbers o números
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Es un número, puede ser entero, negativo o flotante. El tipo siempre va a ser Number.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Se pueden realizar operaciones matemáticas entre valores de tipo number.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Tienen métodos nativos de JavaScript.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Inicializar variables con un valores de tipo number:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const number1 = 20;
+          <br>
+          console.log(number1);
+        </code>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const number6 = Number(80);
+          <br>
+          console.log(number6);
+        </code>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const number7 = new Number(70);
+          <br>
+          console.log(number7);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Números flotantes o negativos:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const number3 = 20.2;
+          <br>
+          console.log(number3);
+        </code>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const number4 = 0.12312131;
+          <br>
+          console.log(number4);
+        </code>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const number5 = -10;
+          <br>
+          console.log(number5);
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 12</h3>
+      <span class="font-semibold">
+        Operaciones con numbers
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Suma, resta, multiplicación, división y módulo son las operaciones más comunes de los tipos de datos numbers.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Suma:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const number8 = 20
+          <br>
+          const number9 = 10
+          <br>
+          const additionResult = number8 + number9
+          <br>
+          console.log('Suma', additionResult)
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Resta:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const subtractionResult = number8 - number9
+          <br>
+          console.log('Resta', subtractionResult)
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Multiplicación:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const multiplicationResult = number8 * number9
+          <br>
+          console.log('Multiplicación', multiplicationResult)
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // División:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const divisionResult = number8 / number9
+          <br>
+          console.log('División', divisionResult)
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Módule:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const moduleResult = number8 % number9
+          <br>
+          console.log('Módulo', moduleResult)
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 13</h3>
+      <span class="font-semibold">
+        El objeto Math para otras operaciones
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Tiene propiedades y métodos definidos de forma nativa para operaciones más complejas como obtener el valor de PI.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Se pueden combinar los métodos como más útil sea, por ejemplo obtener un número random en un rango.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // El resultado de PI
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log(Math.PI);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Redondear números
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log("Redondear", Math.round(2.4));
+          <br>
+          console.log("Redondear hacia arriba", Math.ceil(2.2));
+          <br>
+          console.log("Redondear hacia abajo", Math.floor(2.7));
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Operaciones complejas
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log("Raíz cuadrada", Math.sqrt(144));
+          <br>
+          console.log("Valor absoluto", Math.abs(500));
+          <br>
+          console.log("Potencia", Math.pow(2, 4));
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Operaciones útiles para el día a día
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log("Conocer el número mínimo", Math.min(4, 7, -1, 12));
+          <br>
+          console.log("Conocer el número máximo", Math.max(4, 7, 1, 12));
+          <br>
+          console.log("Número aleatorio entre 0 y 100", Math.floor(Math.random() * 100));
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 14</h3>
+      <span class="font-semibold">
+        El orden de las operaciones
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Es igual que en matemáticas.
+        </li>
+        <li class="w-full px-4 py-2 rounded-b-lg">
+          - Se puede utilizar paréntesis, corchetes o llaves para separar en términos.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Orden por default
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const product4WithSpaces = console.log("Primero 30 * 2 y luego suma 20", 20 + 30 * 2);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Paréntesis para separar en términos
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log("Parentesís para primero que se ejecute la suma y después la multiplicación", (20 + 30) * 2);
+          <br>
+          console.log("20% de descuento en el carrito de compras:", (20 + 30 + 40 + 50 + 60) * 0.2);
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 15</h3>
+      <span class="font-semibold">
+        Incrementos y decrementos
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Se puede incrementar o decrementar de a uno.
+        </li>
+        <li class="w-full px-4 py-2 rounded-b-lg">
+          - Se puede incrementar o decrementar de a varios valores de tipo number.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Se utiliza ++ o --.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Incrementar
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          let puntaje1 = 5;
+          <br>
+          console.log(puntaje1);
+          <br>
+          console.log("Incrementar de a uno, primero ejecuta el valor inicial y luego incrementa", puntaje1++);
+          <br>
+          console.log("Incrementar de a uno, primero incrementa y luego muestra el valor", ++puntaje1);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Decrementar
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log("Decrementar de a uno, primero ejecuta el valor inicial y luego incrementa", puntaje1--);
+          <br>
+          console.log("Decrementar de a uno, primero incrementa y luego muestra el valor", --puntaje1);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Incrementar de a más de a uno
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const pointRugby = 3;
+          <br>
+          puntaje1 += pointRugby;
+          <br>
+          console.log("Se le suma 3 al puntaje inicial", puntaje1);
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 16</h3>
+      <span class="font-semibold">
+        Convertir strings a numbers
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          - Los métodos están en el objeto Number (palabra reservada).
+        </li>
+        <li class="w-full px-4 py-2 rounded-b-lg">
+          - Podemos convertir un string a un número entero o flotante.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Podemos saber si un número es entero o no.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Conocer el tipo de dato
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const numberStringOne = "20";
+          <br>
+          console.log("Primer constante: ", numberStringOne);
+          <br>
+          console.log("Tipo de dato de la primer constante:", typeof numberStringOne);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Convertir un string a un número entero
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log("Ahora el string es un número: ", Number.parseInt(numberStringOne));
+          <br>
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Convertir un string a un número flotante
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const numberStringTwo = "20.2";
+          <br>
+          console.log(numberStringTwo);
+          <br>
+          console.log(
+            "Ahora el string es un número flotante: ",
+            Number.parseFloat(numberStringTwo)
+          );
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Validar si un número es entero o no
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const numberStringThree = "Uno";
+          <br>
+          console.log(numberStringThree);
+          <br>
+          console.log("¿Es un número entero?", Number.isInteger(numberStringThree));
+          <br>
+          <br>
+          const numberStringFour = 20;
+          <br>
+          console.log(numberStringFour);
+          <br>
+          console.log("¿Es un número entero?", Number.isInteger(numberStringFour));
+        </code>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+  <script src="./js/01-app-numbers.js"></script>
+  <script src="./js/02-app-numbers.js"></script>
+  <script src="./js/03-app-numbers.js"></script>
+  <script src="./js/04-app-numbers.js"></script>
+  <script src="./js/05-app-numbers.js"></script>
+  <script src="./js/06-app-numbers.js"></script>
+</body>
+
+</html>
