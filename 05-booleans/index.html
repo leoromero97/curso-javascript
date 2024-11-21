@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <title>JavaScript | 05 Booleans</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" cont nt="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-slate-900 text-gray-200 flex flex-col w-full">
+  <header class="w-full px-4 py-6">
+    <span class="font-semibold">Curso de JavaScript - Clase 05 - Booleans</span>
+  </header>
+  <main class="flex flex-col w-full justify-center px-10 gap-6 py-10">
+    <h1 class="text-3xl font-bold">
+      Tema 4: Booleans
+    </h1>
+    <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 max-w-sm"
+      role="alert">
+      <span class="font-medium">⚠️</span> Abrí la consola para ver cada clase o para practicar.
+      <span class="font-medium">Podés presionar F12 o command + option + i</span>
+    </div>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 20</h3>
+      <span class="font-semibold">
+        Valores de booleans
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Solo tiene 2 valores, true o false.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Asignando valores booleanos
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const boolean1 = true;
+          <br>
+          const boolean2 = false;
+          <br>
+          console.log(boolean1);
+          <br>
+          console.log(boolean2);
+          <br>
+          console.log(typeof boolean1);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Comparando 2 valores de tipo boolean:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log("Comparar 2 valores booleans:", boolean1 === boolean2);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Crear un constructor de tipo boolean:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const boolean3 = new Boolean(true);
+          <br>
+          console.log(boolean3);
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 21</h3>
+      <span class="font-semibold">
+        Operador ternario
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Una forma más simplificada de validar por si o por no.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Operador ternario
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const isAuth = true;
+          <br>
+          console.log(isAuth ? "Si está autenticado" : "No está autenticado");
+        </code>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+  <script src="./js/01-booleans.js"></script>
+  <script src="./js/02-booleans.js"></script>
+</body>
+
+</html>
