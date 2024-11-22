@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <title>JavaScript | 06 Objects</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" cont nt="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-slate-900 text-gray-200 flex flex-col w-full">
+  <header class="w-full px-4 py-6">
+    <span class="font-semibold">Curso de JavaScript - Clase 06 - Objects</span>
+  </header>
+  <main class="flex flex-col w-full justify-center px-10 gap-6 py-10">
+    <h1 class="text-3xl font-bold">
+      Tema 6: Objects
+    </h1>
+    <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 max-w-sm"
+      role="alert">
+      <span class="font-medium">⚠️</span> Abrí la consola para ver cada clase o para practicar.
+      <span class="font-medium">Podés presionar F12 o command + option + i</span>
+    </div>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 22</h3>
+      <span class="font-semibold">
+        Crear objetos literales
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Casi todo en JavaScript es un objeto.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Se representan entre llaves.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Pueden tener diferentes valores y cada valor puede ser cualquier tipo de dato.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Creando un objeto literal
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const profile = {
+            name: "Leonardo",
+            price: 2000,
+            isAvailable: false,
+          };          
+          <br>
+          console.log("Ver objeto profile:", profile);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Creando un objeto constructor
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          function Profile(name, price) {
+            this.name = name;
+            this.price = price;
+            this.isAvailable = true;
+          }       
+          <br>
+          const profile2 = new Profile("Esteban", 1300);
+          <br>
+          console.log("Mostrar perfil 2 con objeto constructor:", profile2);
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 23</h3>
+      <span class="font-semibold">
+        Accediedo a valores de un objeto
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Los valores de un objeto serían las propiedades del mismo.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Primera forma
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const profile1 = {
+            lastName: "Romero",
+            price: 2200,
+            available: true,
+          };
+          <br>
+          console.log(
+            "Como acceder a un valor específico de un objeto:",
+            profile1.lastName
+          );
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Segunda forma
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log(
+            "Como acceder a un valor específico de un objeto de otra forma:",
+            profile1["lastName"]
+          );
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 24</h3>
+      <span class="font-semibold">
+        Modificando valores de un objeto
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Se pueden agregar, cambiar y eliminar propiedades a un objeto.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Agregando un valor nuevo
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const productObject = {
+            name: "Monitor 20 pulgadas",
+            price: 70000,
+            available: true,
+          };
+          <br>
+          productObject.image = "image.png";
+          <br>
+          console.log(productObject);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Cambiando un valor existente
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          productObject.available = false;
+          <br>
+          console.log(productObject);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Eliminando un valor existente
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          delete productObject.price;
+          <br>
+          console.log(productObject);
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 25</h3>
+      <span class="font-semibold">
+        Destructiring de un objeto
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Se pueden obtener los valores de un objeto a partir de la destructuración del mismo.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Creando una constante a partir de un valor
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const productObject2 = {
+            productName: "MacBookc Pro",
+            price: 3000,
+            available: true,
+          };
+          <br>
+          const nombre = productObject2.productName;
+          <br>
+          console.log("Constante creada a partir de un valor de un objeto:", nombre);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Destructurando un valor de un objeto
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const { productName } = productObject2;
+          <br>
+          console.log("Valor destructurado", productName);
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 26</h3>
+      <span class="font-semibold">
+        Objetos dentro de objetos
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Un objeto puede tener múltiples objetos dentro del mismo.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Se puede destructurar objetos anidados.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Acceder al objeto dentro de un objeto
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const productObject3 = {
+            productName: "Aire acondicionado",
+            price: 800000,
+            available: true,
+            information: {
+              weight: "1kg",
+              height: "50cm",
+              width: "70cm",
+            },
+          };
+          <br>
+          console.log(productObject3.information);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Acceder al valor de un objeto dentro de un objeto
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log(productObject3.information.weight);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Acceder al valor de un objeto anidado por destructuring:
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const {
+            productName,
+            information,
+            information: { width },
+          } = productObject3;
+          <br>
+          console.log(productName, information, width);
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 27</h3>
+      <span class="font-semibold">
+        Congelar objetos para no mutarlos
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Los objetos literales son de fácil mutación.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - No siempre vamos a querer modificar el objeto principal, si no sus valores.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Usar el "use strict" hace que el código de JavaScript respete las buenas prácticas.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Para congelar un objeto hay que habilitar el modo estricto
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const productObject4 = {
+            productName: 'Tablet',
+            price: 4000,
+            available: true
+          }
+          <br>
+          productObject4.image = 'image.png'
+          <br>
+          Object.freeze(productObject4)
+          <br>
+          productObject4.icon = 'icon.svg'
+          <br>
+          console.log("Usando el método freeze", productObject4)
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Sellar un objeto, no permite eliminar, ni agregar pero si permite editar propiedades existentes.
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const productObject5 = {
+            productName: 'Celular',
+            price: 1000,
+            available: true
+          }
+          <br>
+          productObject5.image = 'image.png'
+          <br>
+          Object.seal(productObject5)
+          <br>
+          productObject5.icon = 'icon.svg'
+          <br>
+          console.log("Esto no se renderiza porque no se puede agregar una propiedad usando el método seal:", productObject5)
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 28</h3>
+      <span class="font-semibold">
+        Copiar 2 objetos
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Podemos unir uno o más objetos en uno solo.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Ver objetos por separado
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const productObject6 = {
+            productName: "Play Station",
+            price: 900,
+            available: true,
+          };
+          <br>
+          const sizeProduct6 = {
+            weight: "1kg",
+            width: "15cm",
+          };
+          <br>
+          console.log(productObject6)
+          <br>
+          console.log(sizeProduct6)
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Unificar objetos con método assign
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const objectsJoin = Object.assign(productObject6, sizeProduct6)
+          <br>
+          console.log('Objetos unificado', objectsJoin)
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Unificar objetos con spread operator
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const objectsJoin2 = {...productObject6, ...sizeProduct6}
+          <br>
+          console.log('Objetos unificado con spread operator', objectsJoin2)
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 29</h3>
+      <span class="font-semibold">
+        Como acceder a propiedades internas
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Podemos acceder a propiedades internas de un mismo objeto con el método this.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Crear una propiedad de tipo función (método del objeto)
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const productObject7 = {
+            productName: "Play Station 5",
+            price: 1200,
+            available: true,
+            getInformation: function () {
+              console.log(
+                `El producto ${this.productName} tiene un valor de $${this.price}`
+              );
+            },
+          };
+          <br>
+          productObject7.getInformation();
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 30</h3>
+      <span class="font-semibold">
+        Métodos útiles de objetos
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Existen diferentes métodos para usar en un tipo de dato objeto.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Crear un objeto
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const productObject8 = {
+            productName: "Play Station 4",
+            price: 600,
+            available: true,
+            getInformation: function () {
+              console.log(
+                `El producto ${this.productName} tiene un valor de $${this.price}`
+              );
+            },
+          };
+          <br>
+          console.log(productObject7);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Obtener un array a partir de las propiedades de un objeto
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log(
+            "Transformar un objeto a un array con los nombres de sus propiedades:",
+            Object.keys(productObject8)
+          );
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Obtener un array a partir de los valores de las propiedades de un objeto
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log(
+            "Transformar un objeto a un array con los valores de sus propiedades:",
+            Object.values(productObject8)
+          );
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Obtener un objeto con arrays como propiedades, y cada array tiene su propiedad y su valor
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log(
+            "Transformar un objeto a un objeto donde cada propiedad se vuelve un array con el nombre de la propiedad y su valor:",
+            Object.entries(productObject8)
+          );
+        </code>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+  <script src="./js/01-objects.js"></script>
+  <script src="./js/02-objects.js"></script>
+  <script src="./js/03-objects.js"></script>
+  <script src="./js/04-objects.js"></script>
+  <script src="./js/05-objects.js"></script>
+  <script src="./js/06-objects.js"></script>
+  <script src="./js/07-objects.js"></script>
+  <script src="./js/08-objects.js"></script>
+  <script src="./js/09-objects.js"></script>
+</body>
+
+</html>
