@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <title>JavaScript | 07 Arrays</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" cont nt="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-slate-900 text-gray-200 flex flex-col w-full">
+  <header class="w-full px-4 py-6">
+    <span class="font-semibold">Curso de JavaScript - Clase 07 - Arrays</span>
+  </header>
+  <main class="flex flex-col w-full justify-center px-10 gap-6 py-10">
+    <h1 class="text-3xl font-bold">
+      Tema 7: Arrays
+    </h1>
+    <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 max-w-sm"
+      role="alert">
+      <span class="font-medium">⚠️</span> Abrí la consola para ver cada clase o para practicar.
+      <span class="font-medium">Podés presionar F12 o command + option + i</span>
+    </div>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 31</h3>
+      <span class="font-semibold">
+        Crear arrays/arreglos/listas
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Los arrays son listas en JavaScript.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Agrupa varios elementos.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Los elementos pueden ser iguales o distintos.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Los elementos pueden ser cualquier tipo de dato, strings, numbers, booleans, objects, incluso, arrays.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Los arrays también utilizan índices/posiciones para cada elemento.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Crear un array con tipos de datos iguales
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const numbers1 = [10, 20, 30];         
+          <br>
+          console.log(numbers1);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Crear un array a partir del constructor de arrays
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const months1 = new Array("Enero", "Febrero", "Marzo"); 
+          <br>
+          console.log(months1);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Crear un array con diferentes tipos de datos
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const arrayDiferents1 = [
+            "string 1",
+            20,
+            false,
+            { country: "Argentina" },
+            [1, 2, 3],
+          ];
+          <br>
+          console.log(arrayDiferents1);
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 32</h3>
+      <span class="font-semibold">
+        Acceder a arrays
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Es necesario conocer el índice del valor al que queremos acceder.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Se utilizan corchetes y su índice para acceder a su valor.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Acceder al valor 30
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const numbers2 = [10, 20, 30, 40, 50, [1,2,3]];
+          <br>
+          console.log(numbers2);
+          <br>
+          console.table(numbers2);       
+          <br>
+          console.log('Índice 2', numbers2[2]);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Acceder al valor 2 del indice 5
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log('Índice 5 y su sub índice 1', numbers2[5][1]);
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 33</h3>
+      <span class="font-semibold">
+        Recorrer un array
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Es necesario conocer cuánto mide el array, cuántos elementos tiene.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Se puede recorrer de diferentes maneras, la primera es el bucle/iterador for.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - En el iterador for maneja la posición de dónde quiero que inicie, cuántas veces queres que se ejcute el loop, y de a qué cantidad queres que se itere ese loop.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Conocer la longitud del array
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const months2 = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"];
+          <br>
+          console.table(months2);
+          <br>
+          console.log(months2.length);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Recorrer array con con un iterador for
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          for (let index = 0; index < months2.length; index++) {
+            console.log(index);
+            const element = months2[index];
+            // const element = months2[0];
+            // const element = months2[1];
+            // const element = months2[2];...
+            console.log(element);
+          }
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 34</h3>
+      <span class="font-semibold">
+        Agregar nuevos valores a un array
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Es necesario conocer cuánto mide el array, cuántos elementos tiene.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Se pueden modificar los valores dentro de un array.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Si agregas un elemento en una posición que no existe, JavaScript respeta esa posición que se le indica.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Cambiar el valor de un elemento en un array
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const months3 = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"];
+          <br>
+          console.log(months3.length);
+          <br>
+          months3[0] = 'Mes inicial'
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Agregar un elemento en un array
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          months3[7] = "Julio";
+          <br>
+          months3[10] = "Noviembre";
+          <br>
+          console.table(months3);
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 35</h3>
+      <span class="font-semibold">
+        Agregar nuevos valores (de forma imperativa) al principio o final de un array
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Para agregar valores a un array podemos utilizar métodos.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Se pueden agregar al principio o al final.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Agregar un valor al final del array con el método push()
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const days1 = ["Lunes", "Martes", "Miércoles"];
+          <br>
+          console.table(days1);
+          <br>
+          days1.push("Jueves");
+          <br>
+          console.table(days1);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Agregar un valor al inicio del array con el método unshift()
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          days1.unshift("Domingo");
+          <br>
+          console.table(days1);
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 36</h3>
+      <span class="font-semibold">
+        Crear un nuevo elemento con spread operator (forma declarativa)
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Para agregar valores a un array de forma declarativa podemos usar spread operator.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Para agregar valores a un array de forma declarativa podemos usar spread operator.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - No modifica el array original.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Crear constantes, array y objetos
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const cartOrigin = [];
+          <br>
+          const product9 = {
+            name: "Smart TV",
+            price: 40000,
+          };
+          <br>
+          const product10 = {
+            name: "Play Station 5",
+            price: 1000000,
+          };
+          <br>
+          const product11 = {
+            name: "Tablet",
+            price: 300000,
+          };
+          <br>
+          console.table(cartOrigin);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Crear un array para agregar elementos
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          let cartFinal;
+          <br>
+          cartFinal = [...cartOrigin, product9]
+          <br>
+          console.table(cartFinal)
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Agregando otro valor al final del array
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          cartFinal = [...cartFinal, product10]
+          <br>
+          console.table(cartFinal)
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Agregando otro valor al inicio del array
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          cartFinal = [product11, ...cartFinal]
+          <br>
+          console.table(cartFinal)
+          <br>
+          console.table('Esto sigue siendo un array vacio porque no se modificó:', cartOrigin)
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 37</h3>
+      <span class="font-semibold">
+        Eliminar elementos de un array (forma imperativa)
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Para eliminar valores a un array de forma imperativa podemos usar métodos como push, pop y splice.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Crear constantes de array y objetos
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const cartOrigin2 = [];
+          <br>
+          const product12 = {
+            name: "Iphone 16",
+            price: 1200000,
+          };
+          <br>
+          const product13 = {
+            name: "Play Station 4",
+            price: 300000,
+          };
+          <br>
+          const product14 = {
+            name: "Tablet",
+            price: 300000,
+          };
+          <br>
+          const product15 = {
+            name: "Xiaomi Redmi13",
+            price: 600000,
+          };
+          <br>
+          cartOrigin2.push(product12, product13, product14, product15);
+          <br>
+          console.table(cartOrigin2);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Eliminar ultimo elemento de un array
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          cartOrigin2.pop();
+          <br>
+          console.table(cartOrigin2);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Eliminar primer elemento de un array
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          cartOrigin2.shift();
+          <br>
+          console.table(cartOrigin2);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Eliminar un elemento de un array segun la posición
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          cartOrigin2.splice(1, 1);
+          <br>
+          console.table(cartOrigin2);
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 38</h3>
+      <span class="font-semibold">
+        Destructiring de un array
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Un array se puede destructurar al igual que un objeto, pero de diferente forma.
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Se obtiene el valor del elemento en base a la posición.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Destructuring de un array, extraer el valor y crear una variable a partir de ese valor
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const numbers3 = [1, 2, 3, 4];
+          <br>
+          console.log(numbers3);
+          <br>
+          const [index0] = numbers3;
+          <br>
+          // El nombre puede ser cualquiera ya que se accede en orden del index
+          <br>
+          console.log(index0);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Si queres una posición diferente sin utilizar las otras posiciones, podes usar comas.
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const [, , index2] = numbers3;
+          <br>
+          console.log(index2);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Si queres obtener el resto de elementos podes usar ...
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const [, index1, ...rest] = numbers3;
+          <br>
+          console.log("índice 1 y resto del array", index1, rest);
+        </code>
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-4xl">Clase 39</h3>
+      <span class="font-semibold">
+        Bucles forEach y map para recorrer un array
+      </span>
+      <ul class="w-full max-w-lg text-sm font-medium  border border-slate-200 rounded-lg">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Podemos recorrer un array con el método forEach()
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          - Podemos recorrer un array con el método map(), la diferencia es que crea un array nuevo a partir del que recorre.
+        </li>
+      </ul>
+      <span>Ejemplos:</span>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Recorriendo un array de productos con forEach()
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          const cart3 = [
+            {
+              name: "Monitor 24 pulgadas",
+              price: 40000,
+            },
+            {
+              name: "Monitor 32 pulgadas",
+              price: 60000,
+            },
+            {
+              name: "Monitor 90 pulgadas",
+              price: 140000,
+            },
+            {
+              name: "Iphone 15",
+              price: 1110000,
+            },
+          ];
+          <br>
+          console.log("Empieza el bucle forEach()");
+          <br>
+          const newCartForEach = cart3.forEach(function (product) {
+            return `El producto ${product.name} cuesta ARS ${product.price}`;
+          });
+          <br>
+          console.log(newCartForEach);
+        </code>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-medium">
+          // Recorriendo un array de productos con map(|)
+        </span>
+        <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+          console.log("Empieza el bucle map()");
+          <br>
+          const newCartMap = cart3.map(function (product) {
+            return `El producto ${product.name} cuesta ARS ${product.price}`;
+          });
+          <br>
+          console.log(newCartMap);
+        </code>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+  <script src="./js/01-arrays.js"></script>
+  <script src="./js/02-arrays.js"></script>
+  <script src="./js/03-arrays.js"></script>
+  <script src="./js/04-arrays.js"></script>
+  <script src="./js/05-arrays.js"></script>
+  <script src="./js/06-arrays.js"></script>
+  <script src="./js/07-arrays.js"></script>
+  <script src="./js/08-arrays.js"></script>
+  <script src="./js/09-arrays.js"></script>
+</body>
+
+</html>
