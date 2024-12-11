@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>JavaScript | 08 Functions</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" cont nt="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-slate-900 text-gray-200 flex flex-col w-full">
+    <header class="w-full px-4 py-6">
+      <span class="font-semibold"
+        >Curso de JavaScript - Clase 08 - Functions</span
+      >
+    </header>
+    <main class="flex flex-col w-full justify-center px-10 gap-6 py-10">
+      <h1 class="text-3xl font-bold">Tema 8: Functions</h1>
+      <div
+        class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 max-w-sm"
+        role="alert"
+      >
+        <span class="font-medium">⚠️</span> Abrí la consola para ver cada clase
+        o para practicar.
+        <span class="font-medium"
+          >Podés presionar F12 o command + option + i</span
+        >
+      </div>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 40</h3>
+        <span class="font-semibold"> Crear functions/funciones </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Las funciones son bloques de código.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Pueden ser reutilizadas en varios lugares.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Las funciones se crean y deben ser llamadas para que se ejecuten.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Una función se puede declarar o se puede expresar. Las que son
+            declaradas se pueden llamar antes de ser declaradas y funcionan
+            igual.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Las funciones se declaran y luega se llaman para que se ejecuten,
+            primera forma de crear una función es "Declaración de función"
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            // suma1(); llamar a una declaración de función antes de que se cree
+            funciona
+            <br />
+            function suma1() { console.log("La función suma1() muestra:", 2 +
+            2); }
+            <br />
+            suma1();
+          </code>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium"> // "Expresión de función" </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            // suma2(); llamar a una expresión de función antes de que se cree
+            genera un error
+            <br />
+            const suma2 = function () { console.log(3 + 3); };
+            <br />
+            suma2();
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 41</h3>
+        <span class="font-semibold"> Funciones nativas de JavaScript </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Son funciones que vienen en el lenguaje JavaScript.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Se ejecutan llamandolas con el nombre de la función seguido de
+            paréntsis.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Ejecutando window en la consola se pueden ver todas las funciones.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Mostrar una alerta en el navegador
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            alert("Esta es la función alert");
+          </code>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Mostrar una entrada de de texto en una alerta
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            prompt("¿Cuál es tu edad?");
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 42</h3>
+        <span class="font-semibold"> Diferencia entre función y método </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - La diferencia está en la forma en que se escriben.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium"> // Usar una función nativa </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const stringNumberFunctions1 = "20";
+            <br />
+            console.log("Esto es una función: nombre()",
+            parseInt(stringNumberFunctions1));
+          </code>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium"> // Usar un método </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const numberFunctions1 = 20;
+            <br />
+            console.log( "Esto es un método: objeto.nombreMétodo()",
+            numberFunctions1.toString() );
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 43</h3>
+        <span class="font-semibold"> Parámetros en las funciones </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Los parámetros sirven para hacer a la función reutilizable.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Los parámetros son tipos de datos que entran en la función y toman
+            el lugar de la variable interna.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Entran entre los paréntesis de la función.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Los parámetros pueden tener valores por defecto/default.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Crear una función con parámetros y ejecutarla con diferentes
+            parámetros
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            function iniciarSuma1(a, b) { console.log("El resultado de la suma
+            de la función es: ", a + b); }
+            <br />
+            iniciarSuma1(3, 2);
+            <br />
+            iniciarSuma1(333, 1001);
+          </code>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Usar un valores por defecto en sus parámetros
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            function saludarPorConsola1(nombre = "persona humana 👽", apellido =
+            "") { console.log(`Hola ${nombre.concat(" ", apellido)} 👋`); }
+            <br />
+            saludarPorConsola1("Leonardo", "Romero");
+            <br />
+            saludarPorConsola1("Nicolas"); // Muestra undefined en el segundo
+            valor si no tuviera el valor por defecto
+            <br />
+            saludarPorConsola1(); // Muestra undefined en los lugares donde se
+            muestran los valores si no tuviera valores por defecto
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 44</h3>
+        <span class="font-semibold">
+          Cómo se comunican las funciones y qué pueden retornar
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - En proyectos reales van a haber muchas funciones.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Las funciones deben poder comunicarse entre sí dependiendo del
+            alcance o el objetivo de la función.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - A veces vamos a querer o necesitar llamar una función dentro de
+            otra.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Las funciones también puede retornar o devolver u valor después de
+            que haya realizado un proceso interno.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Comunicarse entre diferentes funciones
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            function initApp1() { console.log("Iniciando App"); loadApp1(); }
+            <br />
+            initApp1();
+            <br />
+            function loadApp1() { console.log("Cargando información desde la app
+            de carga"); authUser1("Leo"); }
+            <br />
+            function authUser1(name) { console.log("Autenticando persona
+            usuaria, espere..."); console.log("Auth exitoso, Te damos la
+            bienvenida, ", name, "👋"); }
+          </code>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Función que retorna un valor para luego utilizarlo más adelante
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            function functionSumaReturn(a, b) { return a + b; }
+            <br />
+            const result1 = functionSumaReturn(2, 2);
+            <br />
+            console.log(result1);
+            <br />
+            <br />
+            let totalCart1 = 0;
+            <br />
+            function addProduct(precio) { return (totalCart1 += precio); }
+            <br />
+            function calcImport1(totalCart) { return totalCart * 1.2; }
+            <br />
+            totalCart1 = addProduct(200); totalCart1 = addProduct(400);
+            totalCart1 = addProduct(600);
+            <br />
+            const totalCartFintal = calcImport1(totalCart1);
+            <br />
+            console.log("El total a pagar es: ", totalCartFintal)
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 45</h3>
+        <span class="font-semibold">
+          Agregar funciones en un objeto
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Otra forma de abstraer y encapsular código o funciones es a través de un objeto y sus métodos.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Los métodos de los objetos son funciones, así que pueden recibir parámetros, retornar valores o ser creados.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Crear un objeto con métodos y mandarlas a llamar
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const usersApi1 = {
+              getUsers: function () {
+                return console.log("Trayendo todos los usuarios...");
+              },
+              getUserById: function (id) {
+                return console.log(`La información del usuario con id ${id} es {}`);
+              },
+              deleteUserById: function (id) {
+                return console.log(`Eliminando información del usuario con id: ${id}`);
+              },
+            };
+            <br />
+            usersApi1.getUsers()
+            <br>
+            usersApi1.getUserById(5)
+            <br>
+            usersApi1.deleteUserById(32)
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 46</h3>
+        <span class="font-semibold">
+          Arrow functions
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Otra forma de declarar funciones.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Forma más corta de crear una función.
+          </li>
+          <li
+          class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+        >
+          - La palabra "function" se transforma en una flecha y pasa a la derecha de los paréntesis. El return está implicito.
+        </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Arrow function
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const functions07a = () => "Arrow function";
+            <br>
+            console.log(functions07a);
+          </code>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Arrow function 2
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const functions07b = () => {
+              console.log("Arrow function 2 con llaves");
+              console.log("Arrow function 2 con otra linea de código");
+            };
+            <br>
+            console.log(functions07b);
+          </code>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Arrow function 3
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const functions07c = tech => `Aprendiendo ${tech}`;
+            <br>
+            console.log(functions07c("Javascript"));
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 47</h3>
+        <span class="font-semibold">
+          Arrow functions con iteradores forEach y map
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Se vuelve más corto el código para iterar un array con las arrow functions
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Arrow functions y los iteradores forEach y map
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const cart4 = [
+              {
+                name: "Monitor 24 pulgadas",
+                price: 40000,
+              },
+              {
+                name: "Monitor 32 pulgadas",
+                price: 60000,
+              },
+              {
+                name: "Monitor 150 pulgadas",
+                price: 140000,
+              },
+              {
+                name: "Iphone 15 Pro Max",
+                price: 1110000,
+              },
+            ];
+            <br>
+            console.log("Empieza el bucle forEach() en arrow function");
+            <br>
+            const newCartForEach = cart4.forEach(product => `El producto ${product.name} cuesta ARS ${product.price}`);
+            <br>
+            console.log(newCartForEach);
+          </code>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Map crea un array nuevo con arrow function
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            console.log("Empieza el bucle map() en arrow function");
+            <br>
+            const newCartMap = cart4.map(product => `El producto ${product.name} cuesta ARS ${product.price}`);
+            <br>
+            console.log(newCartMap);
+          </code>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Arrow function 3
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const functions07c = tech => console.log(`Aprendiendo ${tech}`);
+            <br>
+            console.log(functions07c("Javascript"));
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 48</h3>
+        <span class="font-semibold">
+          Arrow functions en objetos y sus métodos get o set
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Las palabras reservadas set y get, son términos universales que se pueden usar dentro de objetos.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Arrow functions en métodos, set y get dentro de objetos.
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const reproductorDeMusicaFunctions09 = {
+              songName: "",
+              reproducir: (id) => console.log(`Reproduciendo canción con id ${id}`),
+              pausar: () => console.log("Pausando canción..."),
+              borrar: (id) => console.log(`Borrando canción con id ${id}`),
+              crearPlaylist: (nombre) => console.log(`Creando la playlist ${nombre}`),
+              reproducirPlaylist: (nombre) =>
+                console.log(`Reproduciendo la playlist ${nombre}`),
+              set newSong(songName) {
+                this.cancion = songName;
+                console.log(`Agregando canción: ${songName}...`);
+              },
+              get obtainSong() {
+                console.log(`Obteniendo canción agregada: ${this.cancion}`);
+              },
+            };
+            <br>
+            reproductorDeMusicaFunctions09.reproducir("01");
+            <br>
+            reproductorDeMusicaFunctions09.pausar();
+            <br>
+            reproductorDeMusicaFunctions09.borrar("02");
+            <br>
+            reproductorDeMusicaFunctions09.crearPlaylist("El fercho de medallo");
+            <br>
+            reproductorDeMusicaFunctions09.reproducirPlaylist("Mor no le temas a la oscuridad");
+            <br>
+            reproductorDeMusicaFunctions09.newSong = "PPP"
+            <br>
+            reproductorDeMusicaFunctions09.obtainSong;
+          </code>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <script src="./js/01-functions.js"></script>
+    <script src="./js/02-functions.js"></script>
+    <script src="./js/03-functions.js"></script>
+    <script src="./js/04-functions.js"></script>
+    <script src="./js/05-functions.js"></script>
+    <script src="./js/06-functions.js"></script>
+    <script src="./js/07-functions.js"></script>
+    <script src="./js/08-functions.js"></script>
+    <script src="./js/09-functions.js"></script>
+  </body>
+</html>
