@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>JavaScript | 09 Control Structures</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" cont nt="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-slate-900 text-gray-200 flex flex-col w-full">
+    <header class="w-full px-4 py-6">
+      <span class="font-semibold"
+        >Curso de JavaScript - Clase 09 - Control Structures</span
+      >
+    </header>
+    <main class="flex flex-col w-full justify-center px-10 gap-6 py-10">
+      <h1 class="text-3xl font-bold">Tema 9: Control Structures</h1>
+      <div
+        class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 max-w-sm"
+        role="alert"
+      >
+        <span class="font-medium">⚠️</span> Abrí la consola para ver cada clase
+        o para practicar.
+        <span class="font-medium"
+          >Podés presionar F12 o command + option + i</span
+        >
+      </div>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 49</h3>
+        <span class="font-semibold">
+          Revisar si se cumple una condición
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Sirve para separar lógica.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Es un concepto clave de la programación
+          </li>
+          <li
+          class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+        >
+          - Se puede utilizar el operador estricto o no.
+        </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Condición de igualdad con if
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const puntaje = 1000
+            <br>
+            if (puntaje === 1000) {
+              console.log('El puntaje es igual a 1.000')
+            } else {
+              console.log('El puntaje no es igual a 1000')
+            }
+            <br>
+            const puntaje2 = 1001
+            <br>
+            if (puntaje2 !== 999) {
+              console.log('El puntaje es diferente a 999')
+            } else {
+              console.log('El puntaje no es diferente a 999')
+            }
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 50</h3>
+        <span class="font-semibold">
+          Operadores mayor y menor que
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Sirve para separar lógica.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Otra opción para controlar estructuras y condiciones.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Mayor qué, menor qué y else if
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const balance1 = 10000;
+            <br>
+            const totalToPay = 300;
+            <br>
+            const hasCard = true;
+            <br>
+            const hasCheck = false;
+            <br>
+            if (balance1 >= totalToPay) {
+              console.log("Si podes pagar el total de tu compra.");
+            } else if (hasCheck) {
+              console.log("Si puedo pagar porque tengo cheque.");
+            } else if (hasCard) {
+              console.log("Si puedo pagar porque tengo la tarjeta.");
+            } else {
+              console.log("No podes pagar el total de tu compra por fondos insuficientes.");
+            }            
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 51</h3>
+        <span class="font-semibold">
+          Múltiples condiciones con Switch case
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Sirve para separar lógica.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - En caso de tener muchos if, o else if, se recomienda usar switch case.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - En base a un valor va a devolver un caso.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Crear una constante con un valor que va a cambiar.
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const paymentMethod = "Efectivo";
+            <br>
+            switch (paymentMethod) {
+              case "Efectivo":
+                console.log(`Pagaste en ${paymentMethod}`);
+                break;
+
+              case "Cheque":
+                console.log(`Pagaste en ${paymentMethod}`);
+                break;
+              case "Tarjeta de débito":
+                console.log(`Pagaste en ${paymentMethod}`);
+                break;
+              default:
+                console.log(
+                  "Aún no seleccionaste un método de pago o método de pago no soportado"
+                );
+                break;
+            }         
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 52</h3>
+        <span class="font-semibold">
+          Operadores && (and)
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Sirve para separar lógica.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Se pueden utilizar dentro de if
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Sirve para crear condiciones o múltiples condiciones
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Constantes con valores en true
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const isUser04 = true;
+            <br>
+            const hasAutentic04 = true;
+            <br>
+            // Que se cumplan las 2 condiciones
+            if (isUser04 && hasAutentic04) {
+              console.log("Podes pagar porque sos usuario y estás autenticado");
+            } else {
+              console.log("No podes pagar porque sos usuario y estás autenticado");
+            }      
+          </code>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Diferentes valores en las constantes
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const isUser05 = false;
+            <br>
+            const hasAutentic05 = true;
+            <br>
+            if (isUser05 && hasAutentic05) {
+              console.log("Podes pagar porque sos usuario y estás autenticado");
+            } else if (!isUser05 && !hasAutentic05) {
+              console.log("No podes pagar porque no sos usuario y no estás autenticado");
+            } else if (!isUser05) {
+              console.log("No sos usuario, inicar sesión.");
+            } else if (!hasAutentic05) {
+              console.log("No estás autenticado, valida tu usuario.");
+            }              
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 53</h3>
+        <span class="font-semibold">
+          Operadores || (or)
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Sirve para separar lógica.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Se pueden utilizar dentro de if
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Sirve para crear condiciones o múltiples condiciones
+          </li>
+          <li
+          class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+        >
+          - Compara entre 2 condiciones, si cumple con una o con la otra.
+        </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Si una condición se cumple es suficiente para ejecutar lo que queramos posterior a esa condición.
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const balanceCash05 = 3000;
+            <br>
+            const balanceCredit05 = 40000;
+            <br>
+            const balanceTotal05 = balanceCash05 + balanceCredit05;
+            <br>
+            const totalToBuy05 = 6000;
+            <br>
+            if (
+              balanceCash05 > totalToBuy05 ||
+              balanceCredit05 > totalToBuy05 ||
+              balanceTotal05 > totalToBuy05
+            ) {
+              console.log("Si podes pagar");
+            } else {
+              console.log("No podes pagar");
+            }    
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 54</h3>
+        <span class="font-semibold">
+          Detener la ejecución de IF
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Sirve para no ejecutar lógica demás.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Sirven dentro de funciones.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Sirve para crear condiciones o múltiples condiciones
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Si queremos detener el if, podemos usar un return siempre y cuando este dentro de una función.
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const score06 = 500;
+            <br>
+            function validateScore06() {
+              if (score06 > 300) {
+                console.log("Buen puntaje... felicidades");
+                return;
+              }
+            
+              if (score06 > 400) {
+                console.log("Excelente puntaje... casi ganas");
+                return;
+              }
+            }
+            <br>
+            validateScore06();  
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 55</h3>
+        <span class="font-semibold">
+          Operador ternario
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Es como un IF
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Valida entre 1 condicón principalmente.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Se pueden anidar operadores ternarios.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Operador ternario muy similar al IF pero en otra sintáxis.
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const isAuth07 = true;
+            <br>
+            console.log(isAuth07 ? "Si está autenticado" : "No está autenticado");
+          </code>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Validar 2 condiciones en un ternario.
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const canPay07 = true;
+            <br>
+            console.log(
+              isAuth07 && canPay07
+                ? "Si está autenticado y puede pagar"
+                : "No está autenticado y no puede pagar"
+            );
+          </code>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Operador ternario anidado.
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const canPay08 = false;
+            <br>
+            console.log(
+              isAuth07
+                ? canPay08
+                  ? "Si está autenticado y puede pagar"
+                  : "Si está auténticado y no puede pagar"
+                : "No está y no puede pagar"
+            );
+          </code>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <script src="./js/01-control-structures.js"></script>
+    <script src="./js/02-control-structures.js"></script>
+    <script src="./js/03-control-structures.js"></script>
+    <script src="./js/04-control-structures.js"></script>
+    <script src="./js/05-control-structures.js"></script>
+    <script src="./js/06-control-structures.js"></script>
+    <script src="./js/07-control-structures.js"></script>
+  </body>
+</html>
