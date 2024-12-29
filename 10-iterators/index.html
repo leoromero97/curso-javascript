@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>JavaScript | 09 Iterators</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" cont nt="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-slate-900 text-gray-200 flex flex-col w-full">
+    <header class="w-full px-4 py-6">
+      <span class="font-semibold"
+        >Curso de JavaScript - Clase 09 - Iterators</span
+      >
+    </header>
+    <main class="flex flex-col w-full justify-center px-10 gap-6 py-10">
+      <h1 class="text-3xl font-bold">Tema 9: Iterators</h1>
+      <div
+        class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 max-w-sm"
+        role="alert"
+      >
+        <span class="font-medium">⚠️</span> Abrí la consola para ver cada clase
+        o para practicar.
+        <span class="font-medium"
+          >Podés presionar F12 o command + option + i</span
+        >
+      </div>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 56</h3>
+        <span class="font-semibold">
+          Loop for
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - La lógica se va a cumplir hasta que una condición se cumpla o se deje de cumplir.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Necesita un inicializador normalmente es una variable llamada "i", una condición y un incremento.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Inicializar iterador for
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            for (let i = 0; i < 10; i++) {
+              console.log(`Número ${i}`);
+            }
+          </code>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Primer ejercicio integrando números, condiciones e iteradores
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            for (let i = 1; i <= 20; i++) {
+              if (i % 2 === 0) {
+                console.log(`El número ${i} es par`);
+              } else {
+                console.log(`El número ${i} es impar`);
+              }
+            }
+          </code>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Caso real
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const cart6 = [
+            {
+              name: "Monitor 24 pulgadas",
+              price: 40000,
+            },
+            {
+              name: "Monitor 32 pulgadas",
+              price: 60000,
+            },
+            {
+              name: "Monitor 150 pulgadas",
+              price: 140000,
+            },
+            {
+              name: "Iphone 15 Pro Max",
+              price: 1110000,
+            },
+          ];
+          <br>
+          for (let i = 0; i < cart6.length; i++) {
+            console.log(`El producto ${cart6[i].name} cuesta ARS ${cart6[i].price}`);
+          }
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 57</h3>
+        <span class="font-semibold">
+          Loop for, continue y break
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Break va a cotrar la información de un iterador for.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Continue sirve para interceptar un elemento, identificarlo y continuar con la ejecución del iterador for.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Inicializar iterador for con break
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            for (let i = 0; i < 10; i++) {
+              if (i === 5) {
+                console.log(`Este es el número 5. #${i}`);
+                break; // Se detiene el ciclo
+              }
+              console.log(`Número ${i}`);
+            }
+            
+          </code>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Inicializar iterador for con continue
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            for (let i = 0; i < 10; i++) {
+              if (i === 5) {
+                console.log(`Este es el número 5. #${i}`);
+                continue; // Se se muestra el mensaje y se salta a la siguiente iteración.
+              }
+              console.log(`Número ${i}`);
+            }
+            
+          </code>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Caso real
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const cart7 = [
+            {
+              name: "Monitor 24 pulgadas",
+              price: 40000,
+            },
+            {
+              name: "Monitor 32 pulgadas",
+              price: 60000,
+              isOff: true,
+            },
+            {
+              name: "Monitor 150 pulgadas",
+              price: 140000,
+            },
+            {
+              name: "Iphone 15 Pro Max",
+              price: 1110000,
+            },
+          ];
+          <br>
+          for (let i = 0; i < cart7.length; i++) {
+            if (cart7[i].isOff) {
+              console.log(`El producto ${cart7[i].name} tiene un descuento`);
+              continue;
+            }
+            console.log(`El producto ${cart7[i].name}`);
+          }
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 58</h3>
+        <span class="font-semibold">
+          Ejercicio Fizz Buzz
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Hay que tener en cuenta el orden de las condiciones.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+           Dada ima serie de elementos, los múltiplos de 3 y 5 se deben reemplazar por "FizzBuzz", los múltiplos de 3 por "Fizz" y los múltiplos de 5 por "Buzz". Si un número no es múltiplo de 3 o 5, se debe dejar igual. Por ejemplo, si la serie es [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], el resultado debe ser [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz"].
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            for (let i = 1; i < 100; i++) {
+              if (i % 15 === 0) {
+                console.log("FizzBuzz");
+              } else if (serie[i] % 3 === 0) {
+                console.log("Fizz");
+              } else if (serie[i] % 5 === 0) {
+                console.log("Buzz");
+              }
+            }
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 59</h3>
+        <span class="font-semibold">
+          Loop While
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Itera una serie de elementos mientras una condición se cumpla.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Está en otros lenguajes de programación.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Inicializar while
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            while (i < 10) {
+              // Condición
+              console.log(`Número con while ${i}`);
+              i++; // Incremento
+            }
+          </code>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Fizz Buzz con while
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            let init = 1;
+            <br>
+            while (init < 50) {
+              // Condición
+              console.log("Fizz Buzz con while");
+              if (init % 15 === 0) {
+                console.log(`${init} FizzBuzz`);
+              } else if (init % 3 === 0) {
+                console.log(`${init} Fizz`);
+              } else if (init % 5 === 0) {
+                console.log(`${init} Buzz`);
+              }
+              init++; // Incremento
+            }
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 60</h3>
+        <span class="font-semibold">
+          Loop Do While
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Se ejecuta al menos una vez sin importar si se cumple la condición y después verifica la condición.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Está en otros lenguajes de programación.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Inicializar do while
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            let i2 = 0;
+            <br>
+            do {
+              console.log(`Número con do while ${i2}`);
+              i2++; // Incremento
+            } while (i2 < 10); // Condición
+          </code>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Fizz Buzz con do while
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            let init = 1;
+            <br>
+            console.log("Fizz Buzz con do while");
+            <br>
+            do {
+              // Condición
+              if (init2 % 15 === 0) {
+                console.log(`${init2} FizzBuzz`);
+              } else if (init2 % 3 === 0) {
+                console.log(`${init2} Fizz`);
+              } else if (init2 % 5 === 0) {
+                console.log(`${init2} Buzz`);
+              }
+              init2++; // Incremento
+            } while (init2 < 50);
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 61</h3>
+        <span class="font-semibold">
+          Loops forEach() y map()
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Se ejecuta por cada elemento de un array.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Es propio de JavaScript.
+          </li>
+          <li
+          class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+        >
+          - ForEach itera sobre el mismo array y map crea uno nuevo en base al array iterado.
+        </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // ForEach
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const tasks1 = ["Hacer la tarea", "Comer", "Entrenar", "Dormir"];
+            <br>
+            tasks1.forEach((task, index) => console.log(`${index + 1}. ${task}`));
+          </code>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // map
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const newArrayByTasks1 = tasks1.map((task, index) => {
+              console.log(`${index + 1}. ${task}`);
+              return `${index + 1}. ${task}`;
+            });
+            <br>
+            console.log(newArrayByTasks1);
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 62</h3>
+        <span class="font-semibold">
+          Loops for of
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Funciona como el for, pero es más corto.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Es propio de JavaScript.
+          </li>
+          <li
+          class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+        >
+          - ForEach itera sobre el mismo array y map crea uno nuevo en base al array iterado.
+        </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // For of con strings
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const tasks2 = [
+            "Estudiar inglés",
+            "Cenar",
+            "Salir a correr",
+            "Dormir la siesta",
+          ];
+            <br>
+            for (let task of tasks2) {
+              console.log(task);
+            }
+          </code>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // for of con objetos
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const cart8 = [
+            {
+              name: "Monitor 24 pulgadas",
+              price: 40000,
+            },
+            {
+              name: "Monitor 32 pulgadas",
+              price: 60000,
+            },
+            {
+              name: "Monitor 150 pulgadas",
+              price: 140000,
+            },
+            {
+              name: "Iphone 15 Pro Max",
+              price: 1110000,
+            },
+          ];
+            <br>
+            for (let product of cart8) {
+              console.log(`El producto ${product.name} cuesta ARS ${product.price}`);
+            }
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 63</h3>
+        <span class="font-semibold">
+          Loops for in
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Funciona como el for of, pero itera objetos, no arrays.
+          </li>
+          <li
+          class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+        >
+          - Si iteras un array, te muestra el índice.
+        </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Es propio de JavaScript.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // For in con un objeto
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const car1 = {
+              brand: "Ford",
+              year: 2020,
+              model: "Fiesta",
+            };
+            <br>
+            for (let property in car1) {
+              console.log(`${property}: ${car1[property]}`);
+            }
+            <br>
+            for (let [key, value] of Object.entries(car1)) {
+              console.log(`${key}: ${value} con object.entries`);
+            }            
+          </code>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <script src="./js/01-iterators.js"></script>
+    <script src="./js/02-iterators.js"></script>
+    <script src="./js/03-iterators.js"></script>
+    <script src="./js/04-iterators.js"></script>
+    <script src="./js/05-iterators.js"></script>
+    <script src="./js/06-iterators.js"></script>
+    <script src="./js/07-iterators.js"></script>
+    <script src="./js/08-iterators.js"></script>
+  </body>
+</html>
