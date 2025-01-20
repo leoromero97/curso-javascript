@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>JavaScript | 10 Array Methods</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" cont nt="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-slate-900 text-gray-200 flex flex-col w-full">
+    <header class="w-full px-4 py-6">
+      <span class="font-semibold"
+        >Curso de JavaScript - Clase 10 - Array Methods</span
+      >
+    </header>
+    <main class="flex flex-col w-full justify-center px-10 gap-6 py-10">
+      <h1 class="text-3xl font-bold">Tema 9: Array Methods</h1>
+      <div
+        class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 max-w-sm"
+        role="alert"
+      >
+        <span class="font-medium">⚠️</span> Abrí la consola para ver cada clase
+        o para practicar.
+        <span class="font-medium"
+          >Podés presionar F12 o command + option + i</span
+        >
+      </div>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 64</h3>
+        <span class="font-semibold"> Some </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Son métodos que existen para los arrays.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Son soluciones como iteradores pero normalmente sirven como
+            funciones generales en el desarrollo.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Validar si exsite un valor con array de métodos
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const months4 = [ "Enero", "Febrero", "Marzo", "Abril", "Mayo",
+            "Junio", "Julio", "Agosto", "Septiembre" ];
+            <br />
+            const cart9 = [ { name: "Caja de herramientas 16 pulgadas", price:
+            20000, }, { name: "Taladro inalámbrico", price: 45000, }, { name:
+            "Juego de destornilladores", price: 15000, } ];
+            <br />
+            months4.forEach((month) => { if (month === "Enero") {
+            console.log("Enero si existe"); } });
+            <br />
+            const result2 = months4.includes("Enero");
+            <br />
+            console.log(result2);
+            <br />
+            const result3 = months4.some((product) => product.name === "Cinta
+            métrica");
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 65</h3>
+        <span class="font-semibold">
+          FindIndex para encontra la posición de un array
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Son métodos que existen para los arrays.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Encontrar la posición de un array
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const months5 = [ "Enero", "Febrero", "Marzo", "Abril", "Mayo",
+            "Junio", "Julio", "Agosto", "Septiembre" ];
+            <br />
+            const cart10 = [ { name: "Caja de herramientas 16 pulgadas", price:
+            20000, }, { name: "Taladro inalámbrico", price: 45000, }, { name:
+            "Juego de destornilladores", price: 15000, } ];
+            <br />
+            months5.forEach((month, index) => { if (month === "Marzo") {
+            console.log(`Marzo encontrado en el índice ${index}`); } });
+            <br />
+            const resultIndex4 = months5.findIndex(month => month ===
+            'Febrero');
+            <br />
+            console.log(resultIndex4);
+            <br />
+            const resultIndex5 = cart10.some(product => product.price <= 20000);
+            <br />
+            console.log(resultIndex5)
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 66</h3>
+        <span class="font-semibold">
+          reduce() para recibir datos, hacer lógica y entregar un resultado
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Son métodos que existen para los arrays.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Ir sumando los precios de los productos y devolver el total a
+            pagar
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const cart11 = [ { name: "Caja de herramientas 16 pulgadas", price:
+            20000, }, { name: "Taladro inalámbrico", price: 45000, }, { name:
+            "Juego de destornilladores", price: 15000, } ];
+            <br />
+            let total2 = 0
+            <br />
+            cart11.forEach(product => total2 += product.price)
+            <br />
+            console.log(total2)
+            <br />
+            let result6 = cart11.reduce((total2, product) => total2 +
+            product.price, 0)
+            <br />
+            console.log(result6);
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 67</h3>
+        <span class="font-semibold">
+          filter() crea un nuevo array filtrado
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Son métodos que existen para los arrays.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Filtrar un objeto de productos
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const cart12 = [ { name: "Caja de herramientas 16 pulgadas", price:
+            20000, }, { name: "Taladro inalámbrico", price: 45000, }, { name:
+            "Juego de destornilladores", price: 15000, }, { name: "Sierra
+            circular", price: 30000, }, { name: "Lijadora orbital", price:
+            25000, }, { name: "Martillo", price: 10000, }, ];
+            <br />
+            let result7;
+            <br />
+            result7 = cart12.filter((product) => product.price >= 20000);
+            <br />
+            result7 = cart12.filter((product) => product.name !== "Martillo");
+            <br />
+            console.log(result7);
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 68</h3>
+        <span class="font-semibold">
+          find() crea un nuevo array en base a la condición
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Son métodos que existen para los arrays.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Retorna el primer elemento que cumpla la condición.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Encontrar un elemento de un array y retornar un array nuevo
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const cart13 = [ { name: "Caja de herramientas 16 pulgadas", price:
+            20000, }, { name: "Taladro inalámbrico", price: 45000, }, { name:
+            "Juego de destornilladores", price: 15000, }, { name: "Sierra
+            circular", price: 30000, }, { name: "Lijadora orbital", price:
+            25000, }, { name: "Martillo", price: 10000, }, ];
+            <br />
+            // con forEach()
+            <br />
+            let result8 = '';
+            <br />
+            cart13.forEach((product, index) => { if (product.name ===
+            'Martillo') { result8 = cart13[index] } })
+            <br />
+            let result9 = cart13.find(product => product.name === 'Martillo')
+            <br />
+            console.log(result9);
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 69</h3>
+        <span class="font-semibold">
+          every() crea un nuevo array en base a la condición
+        </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Son métodos que existen para los arrays.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Todos los elementos que valide dentro del array deben cumplir la
+            condición.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">
+            // Retorna false porque no cumplen todos con la condición
+          </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const cart14 = [ { name: "Caja de herramientas 16 pulgadas", price:
+            20000, }, { name: "Taladro inalámbrico", price: 45000, }, { name:
+            "Juego de destornilladores", price: 15000, }, { name: "Sierra
+            circular", price: 30000, }, { name: "Lijadora orbital", price:
+            25000, }, { name: "Martillo", price: 10000, }, ];
+            <br />
+            const result10 = cart14.every((product) => product.price > 20000);
+            <br />
+            console.log(result10);
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 70</h3>
+        <span class="font-semibold"> concat() une dos arrays </span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Son métodos que existen para los arrays.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - El orden es importante.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium"> // Concatenar arrays </span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const months6 = [ "Enero", "Febrero", "Marzo", "Abril", "Mayo",
+            "Junio", "Julio", "Agosto", ];
+            <br />
+            const months7 = ["Septiembre", "Octubre", "Noviembre"];
+            <br />
+            const months8 = ["Diciembre"];
+            <br />
+            const allMonths1 = months6.concat(months7, months8);
+            <br />
+            console.log(allMonths1);
+            <br />
+            const allMonths2 = [...months6, ...months7, ...months8, "Mes
+            desconocido"];
+            <br />
+            console.log(allMonths2);
+          </code>
+        </div>
+      </section>
+      <section class="flex flex-col gap-4">
+        <h3 class="text-4xl">Clase 71</h3>
+        <span class="font-semibold">Spread Operator</span>
+        <ul
+          class="w-full max-w-lg text-sm font-medium border border-slate-200 rounded-lg"
+        >
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Son métodos que existen para los arrays.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - El orden es importante.
+          </li>
+          <li
+            class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+          >
+            - Programación funcional al usar spread operator en arrays.
+          </li>
+        </ul>
+        <span>Ejemplos:</span>
+        <div class="flex flex-col gap-2">
+          <span class="text-sm font-medium">Spread operator</span>
+          <code class="bg-gray-800 rounded-md px-2 py-1 text-red-500">
+            const months9 = [ "Enero", "Febrero", "Marzo", "Abril", "Mayo",
+            "Junio", "Julio", "Agosto", "Septiembre", ];
+            <br />
+            const cart15 = [ { name: "Caja de herramientas 16 pulgadas", price:
+            20000, }, { name: "Taladro inalámbrico", price: 45000, }, { name:
+            "Juego de destornilladores", price: 15000, }, ];
+            <br />
+            console.log(months9);
+            <br />
+            const months10 = [...months9, "Ocutbre", "Noviembre"];
+            <br />
+            console.log(months10);
+            <br />
+            const product16 = { name: "Sierra circular", price: 30000 };
+            <br />
+            const cart16 = [...cart15, product16];
+            <br />
+            console.log(cart16);
+          </code>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <script src="./js/01-arrayMethods.js"></script>
+    <script src="./js/02-arrayMethods.js"></script>
+    <script src="./js/03-arrayMethods.js"></script>
+    <script src="./js/04-arrayMethods.js"></script>
+    <script src="./js/05-arrayMethods.js"></script>
+    <script src="./js/06-arrayMethods.js"></script>
+    <script src="./js/07-arrayMethods.js"></script>
+    <script src="./js/08-arrayMethods.js"></script>
+  </body>
+</html>
